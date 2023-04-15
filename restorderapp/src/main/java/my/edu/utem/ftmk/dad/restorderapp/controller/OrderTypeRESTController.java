@@ -13,6 +13,7 @@ import my.edu.utem.ftmk.dad.restorderapp.repository.OrderTypeRepository;
  * Comment:
  * @RequestMapping use with class definition to create a URI
  * now /api/ordertypes is the URI for this controller
+ * this class handles requests
  * */
 @RestController
 @RequestMapping("/api/ordertypes")
@@ -24,8 +25,8 @@ public class OrderTypeRESTController{
 	/*
 	 * Comment: 
 	 * Retrieve all records from table OrderType
-	 * using findAll method from interface OrderTypeRepository
-	 * and hold by a list.
+	 * using findAll() method from interface OrderTypeRepository
+	 * and hold by a list
 	 */
 	@GetMapping
 	public List<OrderType> getOrderTypes(){
@@ -34,7 +35,8 @@ public class OrderTypeRESTController{
 	
 	/*
 	 * This method retrieves a record from table OrderType 
-	 * according to a web parameter's value.
+	 * according to a web parameter's value which is 
+	 * orderTypeId using findById() method
 	 */
 	@GetMapping ("{orderTypeId}")
 	public OrderType getOrderType(@PathVariable long orderTypeId) {
@@ -45,7 +47,10 @@ public class OrderTypeRESTController{
 	}
 	
 	/*
-	 * This method store new records to table OrderType
+	 * This method save new record using the save() methods
+	 * variable orderType will contains the value for 
+	 * attributes of OrderType. The orderTypeId will be auto-generated
+	 * if the entity is not exist
 	 */
 	@PostMapping()
 	public OrderType insertOrderType(@RequestBody OrderType orderType) {
@@ -53,7 +58,9 @@ public class OrderTypeRESTController{
 	}
 	
 	/*
-	 * This method update records to table OrderType
+	 * This method update records using the save() methods
+	 * this methods will merge the record if it is existed
+	 * all attribute are updated according to merging
 	 */
 	@PutMapping()
 	public OrderType updateOrderType(@RequestBody OrderType orderType) {
@@ -62,6 +69,8 @@ public class OrderTypeRESTController{
 	
 	/*
 	 * This method delete records from table OrderType
+	 * based on the orderTypeId from the web parameter's
+	 * it will return status 200 if record successfully deleted
 	 */
 	@DeleteMapping("{orderTypeId}")
 	public ResponseEntity<HttpStatus> deleteOrderType(@PathVariable long orderTypeId){

@@ -2,6 +2,13 @@ package my.edu.utem.ftmk.dad.restorderapp.model;
 
 import jakarta.persistence.*;
 
+/*
+ * refer to table product which have productId as PK and productType as FK
+ * it contains setter and getter for the attribute
+ * relationship of producttype and product is defined which
+ * each producttype can be assigned to zero, one or many product
+ * the column to join is also defined with @JoinColumn annotation
+ */
 @Entity
 @Table(name = "product")
 public class Product{

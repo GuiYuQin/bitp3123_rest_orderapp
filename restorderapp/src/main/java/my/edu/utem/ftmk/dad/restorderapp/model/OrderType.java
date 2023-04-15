@@ -2,7 +2,10 @@ package my.edu.utem.ftmk.dad.restorderapp.model;
 
 import jakarta.persistence.*;
 
-//Retrieve and store value to OrderType table
+/*
+ * refer to table ordertype which have orderTypeId as PK
+ * it contains setter and getter for the attribute in ordertype
+ */
 @Entity
 @Table(name = "ordertype") //name of table in database
 public class OrderType {

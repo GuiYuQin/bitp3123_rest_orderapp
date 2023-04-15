@@ -4,6 +4,11 @@ import java.util.List;
 
 import jakarta.persistence.*;
 
+/*
+ * refer to table producttype which have productTypeId as PK
+ * it contains setter and getter for the attribute
+ * relationship of producttype and product is defined
+ */
 @Entity
 @Table(name = "producttype")
 public class ProductType {
