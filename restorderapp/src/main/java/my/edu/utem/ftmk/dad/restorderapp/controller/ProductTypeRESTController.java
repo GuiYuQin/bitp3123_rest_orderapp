@@ -3,6 +3,7 @@ package my.edu.utem.ftmk.dad.restorderapp.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +32,9 @@ public class ProductTypeRESTController {
 	 */
 	@GetMapping
 	public List<ProductType> getProductType() {
-		return productTypeRepository.findAll();
+		//sorting
+		Sort sort = Sort.by("productTypeId").ascending();
+		return productTypeRepository.findAll(sort);
 	}
 	
 	/*

@@ -52,8 +52,8 @@ public class Product{
 		this.price = price;
 	}
 	
-	public int getProductType() {
-		return productType.getProductTypeId();
+	public ProductType getProductType() {
+		return productType;
 	}
 
 	public void setProductType(ProductType productType) {

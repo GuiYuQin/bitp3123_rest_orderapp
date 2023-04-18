@@ -1,0 +1,43 @@
+<header th:fragment="header">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" th:href="@{/ordertype/list}">
+      Master Information
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- A dropdown menu for order -->
+    <div class="dropdown show navbar-dark" id="topNavbar">
+	  <a class="text-light nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    Order
+	  </a>
+	
+	  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+	  	<!-- A menu link to lists order types -->
+		<a class="dropdown-item" th:href="@{/ordertype/list}">Order Types</a>
+		<!-- A menu link to add a new order type -->
+	    <a class="dropdown-item" th:href="@{/ordertype/0}">Add Order Type</a>
+	  </div>
+	</div>
+	
+	<!-- A dropdown menu for product -->
+    <div class="dropdown show navbar-dark" id="topNavbar">
+	  <a class="text-light nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    Product
+	  </a>
+	
+	  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+	  	<!-- A menu link to lists product types -->
+		<a class="dropdown-item" th:href="@{/producttype/list}">Product Types</a>
+		<!-- A menu link to lists product -->
+		<!--<a class="dropdown-item" th:href="@{/product/list}">Product</a>-->
+		<!-- A menu link to add a new product type -->
+	    <a class="dropdown-item" th:href="@{/producttype/0}">Add Product Type</a>
+		<!-- A menu link to add a new product -->
+	    <!--<a class="dropdown-item" th:href="@{/product/0}">Add Product</a>-->
+	  </div>
+	</div>
+	
+  </nav>
+</header>
